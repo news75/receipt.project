@@ -10,7 +10,7 @@ public class receiptTest {
     @Test
     public void testProva()
     {
-        assertEquals(1,1);
+        assertEquals(1,2);
     }
 
 }
