@@ -7,6 +7,6 @@ public class Item {
     }
 
     public int quantity() {
-        return 0;
+        return 1;
     }
 }
