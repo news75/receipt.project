@@ -10,6 +10,7 @@ public class Item {
     }
 
     public int quantity() {
-        return Integer.parseInt(itemDetails.split("[ ]+")[0]);
+        String quantityToken = itemDetails.split("[ ]+")[0];
+        return Integer.parseInt(quantityToken);
     }
 }
