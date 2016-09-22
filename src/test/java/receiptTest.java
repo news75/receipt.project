@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 public class receiptTest {
 
     @Test
-    public void testParseGood() {
+    public void testParseItemDescription() {
         Item item = new Item("1 book at 12.49");
 
         assertEquals(1, item.quantity());
