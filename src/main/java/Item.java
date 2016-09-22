@@ -10,6 +10,6 @@ public class Item {
     }
 
     public int quantity() {
-        return 1;
+        return Integer.parseInt("1");
     }
 }
