@@ -10,6 +10,6 @@ public class Item {
     }
 
     public int quantity() {
-        return Integer.parseInt("1");
+        return Integer.parseInt(itemDetails.split("[ ]+")[0]);
     }
 }
