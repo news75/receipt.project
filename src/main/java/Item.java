@@ -6,7 +6,7 @@ public class Item {
 
     public Item(String itemDetails) {
 
-        this.itemDetails = itemDetails;
+        this.itemDetails = itemDetails.trim();
     }
 
     public int quantity() {

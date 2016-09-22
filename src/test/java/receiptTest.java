@@ -15,6 +15,13 @@ public class receiptTest {
     }
 
     @Test
+    public void testTrimDescription() {
+        Item item = new Item(" 1 book at 12.49");
+
+        assertEquals(1, item.quantity());
+    }
+
+    @Test
     public void test_imparo_ad_usare_lo_split()
     {
         String stringa_da_parsere = "1 book at 12.49";
