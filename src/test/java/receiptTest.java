@@ -8,9 +8,11 @@ import static org.junit.Assert.*;
 public class receiptTest {
 
     @Test
-    public void testProva()
+    public void testParseGood()
     {
-        assertEquals(1,1);
+        Item item = new Item("1 book at 12.49");
+
+        assertEquals(1,item.quantity());
     }
 
 }
