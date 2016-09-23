@@ -13,9 +13,9 @@ public class receiptTest {
 
     @Test
     public void testItemDetailQuantity() {
-        ItemDetails item = new ItemDetails("1 book at 12.49");
+        itemDetails = new ItemDetails("1 book at 12.49");
 
-        int quantity = item.quantity();
+        int quantity = itemDetails.quantity();
 
         assertEquals(1, quantity);
     }
