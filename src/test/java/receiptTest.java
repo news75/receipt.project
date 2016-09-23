@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 public class receiptTest {
 
     @Test
-    public void testParseItemDescription() {
+    public void testItemDetailQuantity() {
         ItemDetails item = new ItemDetails("1 book at 12.49");
 
         assertEquals(1, item.quantity());
@@ -20,6 +20,8 @@ public class receiptTest {
 
         assertEquals(1, item.quantity());
     }
+
+
 
     @Test
     public void test_imparo_ad_usare_lo_split()
