@@ -26,15 +26,6 @@ public class receiptTest {
     }
 
     @Test
-    public void testTrimDescription() {
-        itemDetails = new ItemDetails(" 1 book at 12.49");
-
-        int actual = itemDetails.quantity();
-
-        assertEquals(1, actual);
-    }
-
-    @Test
     public void testItemDetailPrice(){
 
         BigDecimal actual = itemDetails.price();
@@ -42,7 +33,14 @@ public class receiptTest {
         assertEquals(new BigDecimal("12.49"), actual);
     }
 
+    @Test
+    public void testTrimDescription() {
+        itemDetails = new ItemDetails(" 1 book at 12.49");
 
+        int actual = itemDetails.quantity();
+
+        assertEquals(1, actual);
+    }
 
     @Test
     public void test_imparo_ad_usare_lo_split()
