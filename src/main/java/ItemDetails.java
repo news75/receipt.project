@@ -20,7 +20,12 @@ public class ItemDetails {
         return new BigDecimal(priceToken);
     }
 
+    public String description() {
+        return "book";
+    }
+
     private String[] getTokens() {
         return itemDetails.split("[ ]+");
     }
+
 }

@@ -34,6 +34,14 @@ public class receiptTest {
     }
 
     @Test
+    public void testItemDetailDescription(){
+
+        String actual = itemDetails.description();
+
+        assertEquals("book",actual);
+    }
+
+    @Test
     public void testTrimDescription() {
         itemDetails = new ItemDetails(" 1 book at 12.49");
 
