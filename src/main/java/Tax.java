@@ -13,6 +13,6 @@ public class Tax {
     }
 
     public BigDecimal getValue() {
-        return new BigDecimal("0.10");
+        return new BigDecimal("0.00");
     }
 }

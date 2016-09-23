@@ -10,13 +10,13 @@ import static org.junit.Assert.*;
 public class TaxTest {
 
     @Test
-    public void testTaxOfTenPercentOnGenericGoods(){
-        String goodDescription = "Basic sales tax is applicable at a rate of 10% on all goods";
+    public void testTaxFreeGoods(){
+        String goodDescription = "tax free goods are books for instance";
         Tax tax = new Tax(goodDescription);
 
         tax.evaluate();
 
-        assertEquals(new BigDecimal("0.10"), tax.getValue());
+        assertEquals(new BigDecimal("0.00"), tax.getValue());
     }
 
 }
