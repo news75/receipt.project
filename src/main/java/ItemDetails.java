@@ -24,9 +24,9 @@ public class ItemDetails {
         String[] tokens = itemDetails.split(" at ");
         String leftTokens = tokens[0];
         String rightTokens = tokens[1];
-        String[] result = leftTokens.split("[ ]",2);
+        String[] quantityDesctiptionToken = leftTokens.split("[ ]",2);
 
-        return result[1];
+        return quantityDesctiptionToken[1];
     }
 
     private String[] getTokens() {
