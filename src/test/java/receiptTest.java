@@ -50,4 +50,14 @@ public class receiptTest {
 
         assertEquals("imported bottle of perfume",actual);
     }
+
+    @Test
+    public void testTaxOfTenPercentOnGenericGoods(){
+        String goodDescription = "Basic sales tax is applicable at a rate of 10% on all goods";
+        TaxEvaluetor taxEvaluetor = new TaxEvaluetor(goodDescription);
+
+        taxEvaluetor.evaluate();
+
+        assertEquals(new BigDecimal("0.10"), taxEvaluetor.getTax());
+    }
 }
