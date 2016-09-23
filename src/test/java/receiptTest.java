@@ -1,3 +1,4 @@
+import org.junit.Before;
 import org.junit.Test;
 
 import java.math.BigDecimal;
@@ -11,9 +12,13 @@ public class receiptTest {
 
     private ItemDetails itemDetails;
 
+    @Before
+    public void setUp(){
+        itemDetails = new ItemDetails("1 book at 12.49");
+    }
+
     @Test
     public void testItemDetailQuantity() {
-        itemDetails = new ItemDetails("1 book at 12.49");
 
         int quantity = itemDetails.quantity();
 
@@ -31,7 +36,6 @@ public class receiptTest {
 
     @Test
     public void testItemDetailPrice(){
-        itemDetails = new ItemDetails(" 1 book at 12.49");
 
         BigDecimal actual = itemDetails.price();
 

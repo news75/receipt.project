@@ -7,7 +7,6 @@ public class ItemDetails {
     private String itemDetails;
 
     public ItemDetails(String itemDetails) {
-
         this.itemDetails = itemDetails.trim();
     }
 
