@@ -21,7 +21,10 @@ public class ItemDetails {
     }
 
     public String description() {
-        return "book";
+        String[] tokens = itemDetails.split(" at ");
+        String[] result = tokens[0].split("[ ]",2);
+
+        return result[1];
     }
 
     private String[] getTokens() {
