@@ -11,9 +11,6 @@ public class Tax {
         this.goodDescription = goodDescription;
     }
 
-    public void evaluate() {
-    }
-
     public BigDecimal getEvaluateValue() {
         if (goodDescription.contains("book"))
             return new BigDecimal("0.00");
