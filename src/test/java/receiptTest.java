@@ -9,6 +9,8 @@ import static org.junit.Assert.*;
  */
 public class receiptTest {
 
+    private ItemDetails item;
+
     @Test
     public void testItemDetailQuantity() {
         ItemDetails item = new ItemDetails("1 book at 12.49");
@@ -20,7 +22,7 @@ public class receiptTest {
 
     @Test
     public void testTrimDescription() {
-        ItemDetails item = new ItemDetails(" 1 book at 12.49");
+        item = new ItemDetails(" 1 book at 12.49");
 
         int actual = item.quantity();
 
