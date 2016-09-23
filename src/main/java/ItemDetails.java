@@ -34,4 +34,9 @@ public class ItemDetails {
         descriptionToken = quantityDesctiptionTokens[1];
     }
 
+    public void parse(String itemDetails){
+        this.itemDetails = itemDetails.trim();
+        parse();
+    }
+
 }
