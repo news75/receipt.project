@@ -25,7 +25,7 @@ public class ItemDetails {
         return descriptionToken;
     }
 
-    public void parse(){
+    private void parse(){
         String[] tokens = itemDetails.split(" at ");
         String leftTokens = tokens[0];
         priceToken = tokens[1];
