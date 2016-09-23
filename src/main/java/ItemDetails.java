@@ -10,7 +10,7 @@ public class ItemDetails {
     private String priceToken;
 
     public ItemDetails() {
-        this.itemDetails = "";
+
     }
 
     public int quantity() {
