@@ -31,7 +31,7 @@ public class receiptTest {
 
     @Test
     public void testItemDetailPrice(){
-        ItemDetails item = new ItemDetails(" 1 book at 12.49");
+        item = new ItemDetails(" 1 book at 12.49");
 
         BigDecimal actual = item.price();
 
