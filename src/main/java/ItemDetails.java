@@ -32,6 +32,15 @@ public class ItemDetails {
         return descriptionToken;
     }
 
+    private void parse(){
+        String[] tokens = itemDetails.split(" at ");
+        String leftTokens = tokens[0];
+        String rightTokens = tokens[1];
+        String[] quantityDesctiptionTokens = leftTokens.split("[ ]",2);
+        String quantityToken = quantityDesctiptionTokens[0];
+        descriptionToken = quantityDesctiptionTokens[1];
+    }
+
     private String[] getTokens() {
         return itemDetails.split("[ ]+");
     }
