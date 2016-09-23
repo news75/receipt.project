@@ -1,3 +1,4 @@
+import org.junit.Before;
 import org.junit.Test;
 
 import java.math.BigDecimal;
@@ -9,16 +10,22 @@ import static org.junit.Assert.*;
  */
 public class TaxTest {
 
+    private Tax tax;
+
+    @Before
+    public void setUp(){
+        tax = new Tax();
+    }
+
     @Test
+
     public void testBooksAreTaxFreeGoods(){
-        Tax tax = new Tax();
 
         assertEquals(new BigDecimal("0.00"), tax.getEvaluatedValue("tax free goods are books, for instance"));
     }
 
     @Test
     public void testfoodIsTaxFreeGood(){
-        Tax tax = new Tax();
 
         assertEquals(new BigDecimal("0.00"), tax.getEvaluatedValue("tax free goods is food, for instance"));
     }
