@@ -20,7 +20,9 @@ public class receiptTest {
     public void testTrimDescription() {
         ItemDetails item = new ItemDetails(" 1 book at 12.49");
 
-        assertEquals(1, item.quantity());
+        int actual = item.quantity();
+
+        assertEquals(1, actual);
     }
 
     @Test
