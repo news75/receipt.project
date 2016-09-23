@@ -53,11 +53,10 @@ public class receiptTest {
     @Test
     public void test_imparo_ad_usare_lo_split()
     {
-        String stringa_da_parsere = "1 book at 12.49";
+        String[] split = "1 book blue".split("[ ]",2);
 
-        String[] tokens = stringa_da_parsere.split("[ ]+");
-
-        assertEquals("1", tokens[0]);
+        assertEquals("1", split[0]);
+        assertEquals("book blue", split[1]);
     }
 
 }
