@@ -4,12 +4,11 @@ import java.math.BigDecimal;
  * Created by giuseppe on 22/09/2016.
  */
 public class ItemDetails {
-    private String descriptionToken;
-    private String quantityToken;
-    private String priceToken;
+    private String descriptionToken="";
+    private String quantityToken = "0";
+    private String priceToken = "0";
 
     public ItemDetails() {
-
     }
 
     public int quantity() {
