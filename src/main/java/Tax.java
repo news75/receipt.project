@@ -12,7 +12,7 @@ public class Tax {
     public void evaluate() {
     }
 
-    public BigDecimal getTax() {
+    public BigDecimal getValue() {
         return new BigDecimal("0.10");
     }
 }

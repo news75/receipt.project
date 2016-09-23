@@ -16,7 +16,7 @@ public class TaxTest {
 
         tax.evaluate();
 
-        assertEquals(new BigDecimal("0.10"), tax.getTax());
+        assertEquals(new BigDecimal("0.10"), tax.getValue());
     }
 
 }
