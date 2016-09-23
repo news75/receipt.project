@@ -9,6 +9,7 @@ public class ItemDetails {
 
     public ItemDetails(String itemDetails) {
         this.itemDetails = itemDetails.trim();
+        parse();
     }
 
     public int quantity() {
@@ -22,13 +23,6 @@ public class ItemDetails {
     }
 
     public String description() {
-        String[] tokens = itemDetails.split(" at ");
-        String leftTokens = tokens[0];
-        String rightTokens = tokens[1];
-        String[] quantityDesctiptionTokens = leftTokens.split("[ ]",2);
-        String quantityToken = quantityDesctiptionTokens[0];
-        descriptionToken = quantityDesctiptionTokens[1];
-
         return descriptionToken;
     }
 
