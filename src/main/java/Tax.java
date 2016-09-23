@@ -5,13 +5,18 @@ import java.math.BigDecimal;
  */
 public class Tax {
 
+    private String goodDescription;
+
     public Tax(String goodDescription) {
+        this.goodDescription = goodDescription;
     }
 
     public void evaluate() {
     }
 
     public BigDecimal getValue() {
-        return new BigDecimal("0.00");
+        if (goodDescription.contains("book"))
+            return new BigDecimal("0.00");
+        return null;
     }
 }
