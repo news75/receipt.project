@@ -13,7 +13,9 @@ public class receiptTest {
     public void testItemDetailQuantity() {
         ItemDetails item = new ItemDetails("1 book at 12.49");
 
-        assertEquals(1, item.quantity());
+        int quantity = item.quantity();
+
+        assertEquals(1, quantity);
     }
 
     @Test
