@@ -15,7 +15,7 @@ public class receiptTest {
     @Before
     public void setUp(){
         itemDetails = new ItemDetails();
-        itemDetails.parse(" 1 book at 12.49 ");
+        itemDetails.parse(" 1 imported bottle of perfume at 12.49 ");
     }
 
     @Test
@@ -39,7 +39,7 @@ public class receiptTest {
 
         String actual = itemDetails.description();
 
-        assertEquals("book",actual);
+        assertEquals("imported bottle of perfume",actual);
     }
 
     @Test
