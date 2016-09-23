@@ -11,13 +11,17 @@ public class ItemDetails {
     }
 
     public int quantity() {
-        String quantityToken = itemDetails.split("[ ]+")[0];
+        String quantityToken = getTokens()[0];
         return Integer.parseInt(quantityToken);
     }
 
     public BigDecimal price() {
-        String[] tokens = itemDetails.split("[ ]+");
+        String[] tokens = getTokens();
         String priceToken = tokens[tokens.length - 1];
         return new BigDecimal(priceToken);
+    }
+
+    private String[] getTokens() {
+        return itemDetails.split("[ ]+");
     }
 }
