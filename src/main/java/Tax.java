@@ -7,8 +7,7 @@ public class Tax {
 
     private String goodDescription;
 
-    public Tax(String goodDescription) {
-        this.goodDescription = goodDescription;
+    public Tax() {
     }
 
     public BigDecimal getEvaluateValue() {

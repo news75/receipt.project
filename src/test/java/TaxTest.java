@@ -11,7 +11,7 @@ public class TaxTest {
 
     @Test
     public void testBooksAreTaxFreeGoods(){
-        Tax tax = new Tax(null);
+        Tax tax = new Tax();
 
         assertEquals(new BigDecimal("0.00"), tax.getEvaluatedValue("tax free goods are books, for instance"));
     }
