@@ -16,8 +16,7 @@ public class ItemDetails {
     }
 
     public BigDecimal price() {
-        String[] tokens = getTokens();
-        String priceToken = tokens[tokens.length - 1];
+        String priceToken = getTokens()[getTokens().length - 1];
         return new BigDecimal(priceToken);
     }
 
