@@ -5,8 +5,6 @@ import java.math.BigDecimal;
  */
 public class Tax {
 
-    private String goodDescription;
-
     public Tax() {
     }
 
