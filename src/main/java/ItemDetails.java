@@ -4,7 +4,6 @@ import java.math.BigDecimal;
  * Created by giuseppe on 22/09/2016.
  */
 public class ItemDetails {
-    private String itemDetails;
     private String descriptionToken;
     private String quantityToken;
     private String priceToken;
