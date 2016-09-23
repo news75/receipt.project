@@ -14,8 +14,6 @@ public class TaxTest {
         String goodDescription = "tax free goods are books, for instance";
         Tax tax = new Tax(goodDescription);
 
-        tax.evaluate();
-
         assertEquals(new BigDecimal("0.00"), tax.getValue());
     }
 
