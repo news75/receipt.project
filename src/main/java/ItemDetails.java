@@ -22,7 +22,9 @@ public class ItemDetails {
 
     public String description() {
         String[] tokens = itemDetails.split(" at ");
-        String[] result = tokens[0].split("[ ]",2);
+        String leftTokens = tokens[0];
+        String rightTokens = tokens[1];
+        String[] result = leftTokens.split("[ ]",2);
 
         return result[1];
     }
