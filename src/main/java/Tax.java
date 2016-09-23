@@ -5,12 +5,18 @@ import java.math.BigDecimal;
  */
 public class Tax {
 
+    private String[] taxFreeGoods = {"book","food"};
+
     public Tax() {
     }
 
     public BigDecimal getEvaluatedValue(String goodDescription){
-        if (goodDescription.contains("book") || goodDescription.contains("food"))
-            return new BigDecimal("0.00");
+
+        for (String good : taxFreeGoods) {
+            if (goodDescription.contains(good))
+                return new BigDecimal("0.00");
+        }
+
         return null;
     }
 }
