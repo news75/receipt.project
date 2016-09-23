@@ -10,7 +10,7 @@ public class ItemDetails {
     private String priceToken;
 
     public ItemDetails(String itemDetails) {
-        this.itemDetails = itemDetails.trim();
+        this.itemDetails = "";
     }
 
     public int quantity() {
