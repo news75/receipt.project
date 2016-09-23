@@ -19,6 +19,15 @@ public class receiptTest {
     }
 
     @Test
+    public void testCreation(){
+        ItemDetails itemDetails = new ItemDetails();
+
+        assertEquals(0,itemDetails.quantity());
+        assertEquals(new BigDecimal("0"),itemDetails.price());
+        assertEquals("",itemDetails.description());
+    }
+
+    @Test
     public void testItemDetailQuantity() {
 
         int quantity = itemDetails.quantity();
@@ -41,14 +50,4 @@ public class receiptTest {
 
         assertEquals("imported bottle of perfume",actual);
     }
-
-    @Test
-    public void testCreation(){
-        ItemDetails itemDetails = new ItemDetails();
-
-        assertEquals(0,itemDetails.quantity());
-        assertEquals(new BigDecimal("0"),itemDetails.price());
-        assertEquals("",itemDetails.description());
-    }
-
 }
