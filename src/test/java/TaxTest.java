@@ -10,8 +10,8 @@ import static org.junit.Assert.*;
 public class TaxTest {
 
     @Test
-    public void testTaxFreeGoods(){
-        String goodDescription = "tax free goods are books for instance";
+    public void testBooksAreTaxFreeGoods(){
+        String goodDescription = "tax free goods are books, for instance";
         Tax tax = new Tax(goodDescription);
 
         tax.evaluate();
