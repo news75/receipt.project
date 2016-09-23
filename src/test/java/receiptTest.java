@@ -1,5 +1,7 @@
 import org.junit.Test;
 
+import java.math.BigDecimal;
+
 import static org.junit.Assert.*;
 
 /**
@@ -19,6 +21,15 @@ public class receiptTest {
         ItemDetails item = new ItemDetails(" 1 book at 12.49");
 
         assertEquals(1, item.quantity());
+    }
+
+    @Test
+    public void testItemDetailPrice(){
+        ItemDetails item = new ItemDetails(" 1 book at 12.49");
+
+        BigDecimal actual = item.price();
+
+        assertEquals(new BigDecimal("12.49"), actual);
     }
 
 
