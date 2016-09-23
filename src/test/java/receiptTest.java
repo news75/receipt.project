@@ -42,13 +42,4 @@ public class receiptTest {
         assertEquals("imported bottle of perfume",actual);
     }
 
-    @Test
-    public void test_imparo_ad_usare_lo_split()
-    {
-        String[] split = "1 book blue".split("[ ]",2);
-
-        assertEquals("1", split[0]);
-        assertEquals("book blue", split[1]);
-    }
-
 }
