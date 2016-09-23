@@ -26,8 +26,7 @@ public class ItemDetails {
     }
 
     public void parse(String itemDetails){
-        this.itemDetails = itemDetails.trim();
-        String[] tokens = this.itemDetails.split(" at ");
+        String[] tokens = itemDetails.trim().split(" at ");
         String leftTokens = tokens[0];
         priceToken = tokens[1];
         String[] quantityDesctiptionTokens = leftTokens.split("[ ]",2);
