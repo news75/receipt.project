@@ -7,6 +7,7 @@ public class ItemDetails {
     private String itemDetails;
     private String descriptionToken;
     private String quantityToken;
+    private String rightTokens;
 
     public ItemDetails(String itemDetails) {
         this.itemDetails = itemDetails.trim();
@@ -19,7 +20,7 @@ public class ItemDetails {
 
     public BigDecimal price() {
         String priceToken = getTokens()[getTokens().length - 1];
-        return new BigDecimal(priceToken);
+        return new BigDecimal(rightTokens);
     }
 
     public String description() {
@@ -29,7 +30,7 @@ public class ItemDetails {
     private void parse(){
         String[] tokens = itemDetails.split(" at ");
         String leftTokens = tokens[0];
-        String rightTokens = tokens[1];
+        rightTokens = tokens[1];
         String[] quantityDesctiptionTokens = leftTokens.split("[ ]",2);
         quantityToken = quantityDesctiptionTokens[0];
         descriptionToken = quantityDesctiptionTokens[1];
