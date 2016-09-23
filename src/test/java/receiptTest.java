@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
  */
 public class receiptTest {
 
-    private ItemDetails item;
+    private ItemDetails itemDetails;
 
     @Test
     public void testItemDetailQuantity() {
@@ -22,18 +22,18 @@ public class receiptTest {
 
     @Test
     public void testTrimDescription() {
-        item = new ItemDetails(" 1 book at 12.49");
+        itemDetails = new ItemDetails(" 1 book at 12.49");
 
-        int actual = item.quantity();
+        int actual = itemDetails.quantity();
 
         assertEquals(1, actual);
     }
 
     @Test
     public void testItemDetailPrice(){
-        item = new ItemDetails(" 1 book at 12.49");
+        itemDetails = new ItemDetails(" 1 book at 12.49");
 
-        BigDecimal actual = item.price();
+        BigDecimal actual = itemDetails.price();
 
         assertEquals(new BigDecimal("12.49"), actual);
     }
