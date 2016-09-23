@@ -5,6 +5,7 @@ import java.math.BigDecimal;
  */
 public class ItemDetails {
     private String itemDetails;
+    private String descriptionToken;
 
     public ItemDetails(String itemDetails) {
         this.itemDetails = itemDetails.trim();
@@ -26,7 +27,7 @@ public class ItemDetails {
         String rightTokens = tokens[1];
         String[] quantityDesctiptionTokens = leftTokens.split("[ ]",2);
         String quantityToken = quantityDesctiptionTokens[0];
-        String descriptionToken = quantityDesctiptionTokens[1];
+        descriptionToken = quantityDesctiptionTokens[1];
 
         return descriptionToken;
     }
