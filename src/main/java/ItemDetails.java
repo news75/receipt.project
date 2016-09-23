@@ -9,7 +9,7 @@ public class ItemDetails {
     private String quantityToken;
     private String priceToken;
 
-    public ItemDetails(String itemDetails) {
+    public ItemDetails() {
         this.itemDetails = "";
     }
 

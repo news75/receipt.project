@@ -14,7 +14,7 @@ public class receiptTest {
 
     @Before
     public void setUp(){
-        itemDetails = new ItemDetails("");
+        itemDetails = new ItemDetails();
         itemDetails.parse(" 1 book at 12.49 ");
     }
 
