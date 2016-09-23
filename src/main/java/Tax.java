@@ -9,7 +9,7 @@ public class Tax {
     }
 
     public BigDecimal getEvaluatedValue(String goodDescription){
-        if (goodDescription.contains("book"))
+        if (goodDescription.contains("book") || goodDescription.contains("food"))
             return new BigDecimal("0.00");
         return null;
     }
