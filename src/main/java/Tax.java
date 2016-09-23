@@ -12,15 +12,18 @@ public class Tax {
 
     public BigDecimal getEvaluatedValue(String goodDescription){
 
+        if (isTaxFree(goodDescription))
+            return new BigDecimal("0.00");
+
+        return null;
+    }
+
+    private boolean isTaxFree(String goodDescription) {
         boolean isTaxFree = false;
         for (String good : taxFreeGoods) {
             if (goodDescription.contains(good))
                 isTaxFree = true;
         }
-
-        if (isTaxFree)
-            return new BigDecimal("0.00");
-
-        return null;
+        return isTaxFree;
     }
 }
