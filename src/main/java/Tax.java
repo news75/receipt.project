@@ -16,4 +16,9 @@ public class Tax {
             return new BigDecimal("0.00");
         return null;
     }
+
+    public BigDecimal getEvaluatedValue(String goodDescription){
+        this.goodDescription = goodDescription;
+        return this.getEvaluateValue();
+    }
 }
