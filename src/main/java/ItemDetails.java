@@ -35,8 +35,4 @@ public class ItemDetails {
         descriptionToken = quantityDesctiptionTokens[1];
     }
 
-    private String[] getTokens() {
-        return itemDetails.split("[ ]+");
-    }
-
 }
