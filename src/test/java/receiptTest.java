@@ -9,14 +9,14 @@ public class receiptTest {
 
     @Test
     public void testParseItemDescription() {
-        Item item = new Item("1 book at 12.49");
+        ItemDetails item = new ItemDetails("1 book at 12.49");
 
         assertEquals(1, item.quantity());
     }
 
     @Test
     public void testTrimDescription() {
-        Item item = new Item(" 1 book at 12.49");
+        ItemDetails item = new ItemDetails(" 1 book at 12.49");
 
         assertEquals(1, item.quantity());
     }

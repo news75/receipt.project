@@ -1,10 +1,10 @@
 /**
  * Created by giuseppe on 22/09/2016.
  */
-public class Item {
+public class ItemDetails {
     private String itemDetails;
 
-    public Item(String itemDetails) {
+    public ItemDetails(String itemDetails) {
 
         this.itemDetails = itemDetails.trim();
     }
