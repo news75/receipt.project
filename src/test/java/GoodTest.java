@@ -12,9 +12,9 @@ public class GoodTest {
     @Test
     public void testRoundingRules(){
 
-        assertEquals(new BigDecimal("20.00"), Good.roundingRules(new BigDecimal("1.00")));
-        assertEquals(new BigDecimal("21.00"), Good.roundingRules(new BigDecimal("1.01")));
-        assertEquals(new BigDecimal("22.00"), Good.roundingRules(new BigDecimal("1.06")));
+        assertEquals(new BigDecimal("1.00"), Good.roundingRules(new BigDecimal("1.00")));
+        assertEquals(new BigDecimal("1.05"), Good.roundingRules(new BigDecimal("1.01")));
+        assertEquals(new BigDecimal("1.10"), Good.roundingRules(new BigDecimal("1.06")));
 
     }
 
