@@ -13,8 +13,8 @@ public class GoodTest {
     public void testRoundingRules(){
 
         assertEquals(new BigDecimal("20.00"), Good.roundingRules(new BigDecimal("1.00")));
-        assertEquals(new BigDecimal("20.20"), Good.roundingRules(new BigDecimal("1.01")));
-        assertEquals(new BigDecimal("21.20"), Good.roundingRules(new BigDecimal("1.06")));
+        assertEquals(new BigDecimal("21.00"), Good.roundingRules(new BigDecimal("1.01")));
+        assertEquals(new BigDecimal("22.00"), Good.roundingRules(new BigDecimal("1.06")));
 
     }
 
