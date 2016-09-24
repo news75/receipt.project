@@ -56,8 +56,9 @@ public class TaxTest {
     @Test
     public void testGood(){
         Good good = new Good("13 book at 14.99", new ItemDetails(), new Tax());
-
-        assertEquals(new BigDecimal("0.00"), good.taxAmmount());
+        BigDecimal taxPercentage = new BigDecimal("0.0");
+        BigDecimal goodPrice = new BigDecimal("14.99");
+        assertEquals(new BigDecimal("0.00"), good.taxAmmount(goodPrice, taxPercentage));
     }
 
 }
