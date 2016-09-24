@@ -6,8 +6,10 @@ import java.math.BigDecimal;
 public class Calculator {
 
     public BigDecimal getTaxAmmount(ItemDetails itemDetails, Tax tax) {
+        BigDecimal price = itemDetails.price();
+        BigDecimal taxpercentage = tax.getTaxPercentage(itemDetails.description());
 
-        return new BigDecimal("0.00");
+        return Good.roundingRules(price.multiply(taxpercentage));
     }
 
 }

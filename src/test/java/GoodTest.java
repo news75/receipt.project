@@ -25,6 +25,7 @@ public class GoodTest {
         Tax tax = new Tax();
 
         Calculator calculator = new Calculator();
+
         BigDecimal taxAmmount = calculator.getTaxAmmount(item, tax);
 
         assertEquals(new BigDecimal("0.00"), taxAmmount);
