@@ -16,7 +16,7 @@ public class Good {
     }
 
     public static BigDecimal roundingRules(BigDecimal value) {
-
-        return value;
+        
+        return value.divide(new BigDecimal("0.05")).setScale(2);
     }
 }
