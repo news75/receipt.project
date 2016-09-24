@@ -19,7 +19,7 @@ public class GoodTest {
     }
 
     @Test
-    public void testGivenAEntryGetPriceAndTaxAmmount(){
+    public void testGivenAItemGetPriceAndTaxAmmount(){
         ItemDetails item = new ItemDetails();
         item.parse("1 book at 12.49");
         Tax tax = new Tax();
