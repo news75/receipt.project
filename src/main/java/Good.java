@@ -16,7 +16,6 @@ public class Good {
     }
 
     public BigDecimal taxAmmount(BigDecimal goodPrice, BigDecimal taxPercentage) {
-        itemDetails.parse(goodDescription);
 
         return goodPrice.multiply(taxPercentage).setScale(2);
     }
