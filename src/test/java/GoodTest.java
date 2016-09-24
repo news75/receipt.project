@@ -18,6 +18,16 @@ public class GoodTest {
 
     }
 
+    @Test
+    public void testGivenAEntryGetPriceAndTaxAmmount(){
+        String entry = "1 book at 12.49";
+
+        Calculator calculator = new Calculator();
+        calculator.evaluate(entry);
+
+        assertEquals(new BigDecimal("0.00"), calculator.getTaxAmmount());
+    }
+
 
 
 }
