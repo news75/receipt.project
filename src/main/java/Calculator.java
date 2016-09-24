@@ -5,9 +5,10 @@ import java.math.BigDecimal;
  */
 public class Calculator {
 
-    public void evaluate(ItemDetails itemDetails) {
+    public BigDecimal evaluate(ItemDetails itemDetails, Tax tax) {
 
 
+        return getTaxAmmount();
     }
 
     public BigDecimal getTaxAmmount() {

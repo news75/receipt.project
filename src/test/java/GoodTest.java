@@ -22,11 +22,12 @@ public class GoodTest {
     public void testGivenAEntryGetPriceAndTaxAmmount(){
         ItemDetails item = new ItemDetails();
         item.parse("1 book at 12.49");
+        Tax tax = new Tax();
 
         Calculator calculator = new Calculator();
-        calculator.evaluate(item);
+        BigDecimal taxAmmount = calculator.evaluate(item, tax);
 
-        assertEquals(new BigDecimal("0.00"), calculator.getTaxAmmount());
+        assertEquals(new BigDecimal("0.00"), taxAmmount);
     }
 
 
