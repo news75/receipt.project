@@ -21,8 +21,4 @@ public class Good {
         BigDecimal taxPercentage = tax.getTaxPercentage(itemDetails.description());
         return goodPrice.multiply(taxPercentage).setScale(2);
     }
-
-    public BigDecimal taxedPrice() {
-        return new BigDecimal("14.99");
-    }
 }
