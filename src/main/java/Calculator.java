@@ -6,8 +6,7 @@ import java.math.BigDecimal;
 public class Calculator {
 
     public BigDecimal evaluate(ItemDetails itemDetails, Tax tax) {
-
-
+        
         return new BigDecimal("0.00");
     }
 
