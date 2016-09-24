@@ -16,7 +16,10 @@ public class Good {
     }
 
     public BigDecimal taxAmmount() {
-        return new BigDecimal("0.00");
+        itemDetails.parse(goodDescription);
+        BigDecimal goodPrice = itemDetails.price();
+        BigDecimal taxPercentage = tax.getEvaluatedValue(itemDetails.description());
+        return goodPrice.multiply(taxPercentage).setScale(2);
     }
 
     public BigDecimal taxedPrice() {
