@@ -15,7 +15,7 @@ public class Good {
         this.tax = tax;
     }
 
-    public static BigDecimal taxAmmount(BigDecimal goodPrice, BigDecimal taxPercentage) {
+    public static BigDecimal roundingRules(BigDecimal goodPrice, BigDecimal taxPercentage) {
 
         return goodPrice.multiply(taxPercentage).setScale(2);
     }
