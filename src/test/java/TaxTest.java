@@ -36,9 +36,9 @@ public class TaxTest {
     }
 
     @Test
-    public void testTaxForImportedGoods(){
+    public void testTaxForImportedGenericGoods(){
 
-        assertEquals(new BigDecimal("0.05"), tax.getEvaluatedValue("tax for imported goods"));
+        assertEquals(new BigDecimal("0.15"), tax.getEvaluatedValue("tax for imported goods"));
     }
 
     @Test
