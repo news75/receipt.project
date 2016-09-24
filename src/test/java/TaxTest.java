@@ -55,7 +55,7 @@ public class TaxTest {
 
     @Test
     public void testGood(){
-        BigDecimal taxPercentage = new BigDecimal("1.0");
+        BigDecimal taxPercentage = new BigDecimal("0.0");
         BigDecimal goodPrice = new BigDecimal("14.99");
         assertEquals(new BigDecimal("0.00"), Good.roundingRules(goodPrice, taxPercentage));
     }
