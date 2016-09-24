@@ -17,7 +17,7 @@ public class Tax {
         if (goodDescription.contains("imported"))
             return new BigDecimal("0.05");
 
-        return null;
+        return new BigDecimal("0.10");
     }
 
     private boolean isTaxFree(String goodDescription) {
