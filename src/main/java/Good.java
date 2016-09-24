@@ -4,7 +4,7 @@ import java.math.BigDecimal;
  * Created by giuseppe on 24/09/2016.
  */
 public class Good {
-    public Good(String goodDescription) {
+    public Good(String goodDescription, ItemDetails itemDetails, Tax tax) {
 
     }
 
