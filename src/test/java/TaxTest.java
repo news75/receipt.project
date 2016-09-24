@@ -47,4 +47,10 @@ public class TaxTest {
         assertEquals(new BigDecimal("0.10"), tax.getEvaluatedValue("Basic sales tax is applicable at a rate of 10% on all goods"));
     }
 
+    @Test
+    public void testImportedTaxFreeGoods(){
+
+        assertEquals(new BigDecimal("0.05"), tax.getEvaluatedValue("tax 0.05 for imported books goods"));
+    }
+
 }
