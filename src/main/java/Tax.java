@@ -10,7 +10,7 @@ public class Tax {
     public Tax() {
     }
 
-    public BigDecimal getEvaluatedValue(String goodDescription){
+    public BigDecimal getTaxPercentage(String goodDescription){
 
         BigDecimal percentage = new BigDecimal("0.00");
         if (!isTaxFree(goodDescription))
