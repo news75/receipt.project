@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 /**
  * Created by giuseppe on 24/09/2016.
  */
-public class GoodTest {
+public class CalculatorTest {
 
     @Test
     public void testRoundingRules(){
