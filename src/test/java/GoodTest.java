@@ -20,10 +20,11 @@ public class GoodTest {
 
     @Test
     public void testGivenAEntryGetPriceAndTaxAmmount(){
-        String itemDetails = "1 book at 12.49";
+        ItemDetails item = new ItemDetails();
+        item.parse("1 book at 12.49");
 
         Calculator calculator = new Calculator();
-        calculator.evaluate(itemDetails);
+        calculator.evaluate(item);
 
         assertEquals(new BigDecimal("0.00"), calculator.getTaxAmmount());
     }
