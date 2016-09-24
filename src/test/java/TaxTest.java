@@ -53,4 +53,12 @@ public class TaxTest {
         assertEquals(new BigDecimal("0.05"), tax.getEvaluatedValue("tax 0.05 for imported books goods"));
     }
 
+    @Test
+    public void testGood(){
+        Good good = new Good("'13 book at 14.99'");
+
+        assertEquals(new BigDecimal("0.00"), good.taxAmmount());
+        assertEquals(new BigDecimal("14.99"), good.taxedPrice());
+    }
+
 }
