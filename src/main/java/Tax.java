@@ -14,6 +14,8 @@ public class Tax {
 
         if (isTaxFree(goodDescription))
             return new BigDecimal("0.00");
+        if (goodDescription.contains("imported"))
+            return new BigDecimal("0.05");
 
         return null;
     }

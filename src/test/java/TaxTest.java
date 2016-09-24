@@ -35,4 +35,10 @@ public class TaxTest {
         assertEquals(new BigDecimal("0.00"), tax.getEvaluatedValue("tax free goods is medical, for instance"));
     }
 
+    @Test
+    public void testTaxForImportedGoods(){
+
+        assertEquals(new BigDecimal("0.05"), tax.getEvaluatedValue("tax for imported goods"));
+    }
+
 }
