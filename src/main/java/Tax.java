@@ -12,12 +12,13 @@ public class Tax {
 
     public BigDecimal getEvaluatedValue(String goodDescription){
 
-        if (isTaxFree(goodDescription))
-            return new BigDecimal("0.00");
+        BigDecimal percentage = new BigDecimal("0.00");
+        if (!isTaxFree(goodDescription))
+            percentage = percentage.add(new BigDecimal("0.10"));
         if (goodDescription.contains("imported"))
-            return new BigDecimal("0.05");
+            percentage = percentage.add(new BigDecimal("0.05"));
 
-        return new BigDecimal("0.10");
+        return percentage;
     }
 
     private boolean isTaxFree(String goodDescription) {
