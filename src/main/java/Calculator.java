@@ -5,7 +5,7 @@ import java.math.BigDecimal;
  */
 public class Calculator {
 
-    public void evaluate(ItemDetails entry) {
+    public void evaluate(ItemDetails itemDetails) {
 
 
     }
