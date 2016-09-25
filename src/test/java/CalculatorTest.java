@@ -50,15 +50,4 @@ public class CalculatorTest {
         assertEquals(new BigDecimal("10.50"), calculator.getTaxedPrice());
     }
 
-    @Test
-    public void testBasket(){
-        Basket basket = new Basket();
-
-        basket.add("1 book at 12.49");
-        basket.add("1 music CD at 14.99");
-        basket.add("1 chocolate bar at 0.85");
-
-        assertEquals(new BigDecimal("1.50"), basket.salesTaxes());
-    }
-
 }
