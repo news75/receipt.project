@@ -11,7 +11,6 @@ public class Basket {
     private List<Order> orders = new ArrayList<Order>();
 
     public void add(String goodDescription) {
-        goods.add(goodDescription);
         ItemDetails itemDetails = new ItemDetails();
         itemDetails.parse(goodDescription);
         Order order = new Order(itemDetails, new Tax());
