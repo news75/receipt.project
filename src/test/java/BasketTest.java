@@ -28,7 +28,7 @@ public class BasketTest {
     }
 
     @Test
-    public void TestBasketPrintReceipt(){
+    public void testBasketPrintReceipt(){
 
         FakeReceipt receipt = new FakeReceipt();
 
