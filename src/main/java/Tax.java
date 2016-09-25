@@ -5,7 +5,7 @@ import java.math.BigDecimal;
  */
 public class Tax {
 
-    public final  String[] taxFreeGoods = {"book","food","medical", "chocolate"};
+    public final String[] taxFreeGoods = {"book1","food","medical", "chocolate"};
 
     public Tax() {
     }
