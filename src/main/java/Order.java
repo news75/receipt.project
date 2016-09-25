@@ -29,4 +29,8 @@ public class Order {
     public BigDecimal getTaxedPrice() {
         return item.price().add(getTaxAmmount());
     }
+
+    public String getDescription() {
+        return item.description();
+    }
 }

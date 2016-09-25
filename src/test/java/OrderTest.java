@@ -50,4 +50,13 @@ public class OrderTest {
         assertEquals(new BigDecimal("10.50"), order.getTaxedPrice());
     }
 
+    @Test
+    public void testGetDescription(){
+        itemDetails.initWithDescription("description from itemDetails");
+
+        String description = order.getDescription();
+
+        assertEquals("description from itemDetails", description);
+    }
+
 }
