@@ -28,7 +28,8 @@ public class ReceiptTest {
     @Test
     public void testReceipt(){
         List<Order> orders = new ArrayList<Order>();
-        orders.add(new FakeOrder(null,null).initWithTaxedPriceAndTax("10.00","1.00"));
+        ItemDetails itemDetails = new FakeItemDetails().initWithDescription("book");
+        orders.add(new FakeOrder(itemDetails,null).initWithTaxedPriceAndTax("10.00","1.00"));
         Receipt receipt = new Receipt();
 
         receipt.setOrders(orders);

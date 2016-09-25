@@ -27,6 +27,7 @@ public class Receipt {
         if (orders.size() > 0) {
             Order order = orders.get(0);
             BigDecimal taxedPrice = order.getTaxedPrice();
+            String description = order.getDescription();
             header = String.format("1 book: %s", taxedPrice);
         }
 
