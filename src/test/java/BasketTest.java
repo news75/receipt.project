@@ -22,19 +22,4 @@ public class BasketTest {
         assertEquals(new BigDecimal("3.00"), basket.salesTaxes());
         assertEquals(new BigDecimal("30.00"), basket.total());
     }
-
-    @Test
-    public void testEmptyReceipt(){
-        Order[] orders = new Order[] {};
-        Receipt receipt = new Receipt();
-
-        receipt.setOrders(orders);
-        receipt.setTax(new BigDecimal("0.00"));
-        receipt.setTotal(new BigDecimal("0.00"));
-
-        String deliver = receipt.deliver();
-
-        assertEquals("\\nSales Taxes: 0.00\\nTotal: 0.00",deliver);
-    }
-
 }
