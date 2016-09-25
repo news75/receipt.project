@@ -24,8 +24,7 @@ public class Receipt {
     public String deliver() {
 
         String header = "";
-        if (orders.size() > 0) {
-            Order order = orders.get(0);
+        for (Order order : orders) {
             BigDecimal taxedPrice = order.getTaxedPrice();
             String description = order.getDescription();
             header = String.format("\n1 %s: %s", description, taxedPrice);
