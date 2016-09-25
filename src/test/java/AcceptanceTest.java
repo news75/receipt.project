@@ -53,7 +53,7 @@ public class AcceptanceTest {
         basket.add(Order.createFromGoodDescription("1 bottle of perfume at 18.99"));
         basket.add(Order.createFromGoodDescription("1 packet of headache pills at 9.75"));
         basket.add(Order.createFromGoodDescription("1 box of imported chocolates at 11.25"));
-        
+
         basket.printReceipt(receipt);
 
         assertEquals("\n" +

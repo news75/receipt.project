@@ -31,7 +31,7 @@ public class TaxTest {
     }
 
     @Test
-    public void testfoodIsTaxFreeGood(){
+    public void testFoodIsTaxFreeGood(){
 
         assertEquals(new BigDecimal("0.00"), tax.getTaxPercentage("tax free goods is food, for instance"));
     }
