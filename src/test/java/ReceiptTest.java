@@ -12,16 +12,16 @@ import static org.junit.Assert.*;
  */
 public class ReceiptTest {
     private List<Order> orders;
+    private Receipt receipt;
 
     @Before
     public void setUp(){
         orders = new ArrayList<Order>();
+        receipt = new Receipt();
     }
 
     @Test
     public void testEmptyReceipt(){
-        Receipt receipt = new Receipt();
-
         receipt.setOrders(orders);
         receipt.setTax(new BigDecimal("0.00"));
         receipt.setTotal(new BigDecimal("0.00"));
@@ -35,7 +35,6 @@ public class ReceiptTest {
     public void testReceipt(){
         ItemDetails itemDetails = new FakeItemDetails().initWithDescription("book");
         orders.add(new FakeOrder(itemDetails,null).initWithTaxedPriceAndTax("10.00","1.00"));
-        Receipt receipt = new Receipt();
 
         receipt.setOrders(orders);
         receipt.setTax(new BigDecimal("1.00"));
