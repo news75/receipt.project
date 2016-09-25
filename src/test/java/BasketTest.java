@@ -12,8 +12,7 @@ public class BasketTest {
     public Order createOrder(String goodDescription) {
         ItemDetails itemDetails = new ItemDetails();
         itemDetails.parse(goodDescription);
-        Order order = new Order(itemDetails, new Tax());
-        return order;
+        return new Order(itemDetails, new Tax());
     }
 
     @Test
