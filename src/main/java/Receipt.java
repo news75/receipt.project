@@ -23,12 +23,13 @@ public class Receipt {
 
     public String deliver() {
 
+        String header = "";
         if (orders.size() > 0) {
             Order order = orders.get(0);
             BigDecimal taxedPrice = order.getTaxedPrice();
             return String.format("1 book: %s\nSales Taxes: %s\nTotal: %s", taxedPrice, tax, total);
         }
 
-        return String.format("\nSales Taxes: %s\nTotal: %s", tax, total);
+        return String.format("%s\nSales Taxes: %s\nTotal: %s",header, tax, total);
     }
 }
