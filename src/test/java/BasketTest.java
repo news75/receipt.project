@@ -11,15 +11,15 @@ public class BasketTest {
 
     @Test
     public void testBasket(){
-        Order order = new FakeOrder(null,null).initWithTaxedPriceAndTax("10.00","1.00");
+        Order order1 = new FakeOrder(null,null).initWithTaxedPriceAndTax("10.00","1.00");
+        Order order2 = new FakeOrder(null,null).initWithTaxedPriceAndTax("20.00","2.00");
 
         Basket basket = new Basket();
 
-        basket.add(Order.createFromGoodDescription("1 book at 12.49"));
-        basket.add(Order.createFromGoodDescription("1 music CD at 14.99"));
-        basket.add(Order.createFromGoodDescription("1 chocolate bar at 0.85"));
+        basket.add(order1);
+        basket.add(order2);
 
-        assertEquals(new BigDecimal("1.50"), basket.salesTaxes());
-        assertEquals(new BigDecimal("29.83"), basket.total());
+        assertEquals(new BigDecimal("3.00"), basket.salesTaxes());
+        assertEquals(new BigDecimal("30.00"), basket.total());
     }
 }
