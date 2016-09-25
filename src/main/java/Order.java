@@ -19,6 +19,12 @@ public class Order {
         return value.divide(new BigDecimal("0.05")).setScale(0, RoundingMode.UP).multiply(new BigDecimal("0.05")).setScale(2);
     }
 
+    public static Order createOrder(String goodDescription) {
+        ItemDetails itemDetails = new ItemDetails();
+        itemDetails.parse(goodDescription);
+        return new Order(itemDetails, new Tax());
+    }
+
     public BigDecimal getTaxAmmount() {
         BigDecimal price = item.price();
         BigDecimal taxpercentage = tax.getTaxPercentage(this.item.description());
