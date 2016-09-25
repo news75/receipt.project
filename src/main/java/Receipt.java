@@ -21,6 +21,6 @@ public class Receipt {
     }
 
     public String deliver() {
-        return String.format("\\nSales Taxes: 0.00\\nTotal: 0.00");
+        return String.format("\\nSales Taxes: %s\\nTotal: %s", tax, total);
     }
 }
