@@ -33,7 +33,7 @@ public class ReceiptTest {
 
     @Test
     public void testReceipt(){
-        ItemDetails itemDetails = new FakeItemDetails().initWithDescription("book");
+        ItemDetails itemDetails = new FakeItemDetails().initWithDescriptionAndQuantity("book", 1);
         orders.add(new FakeOrder(itemDetails,null).initWithTaxedPriceAndTax("10.00","1.00"));
 
         receipt.setOrders(orders);

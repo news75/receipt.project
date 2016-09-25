@@ -29,6 +29,13 @@ class FakeItemDetails extends ItemDetails {
         return this;
     }
 
+    public ItemDetails initWithDescriptionAndQuantity(String description, int quantity){
+        this.description = description;
+        this.price = new BigDecimal(0.00);
+        this.quantity = quantity;
+        return this;
+    }
+
     @Override
     public String description() {
         return description;

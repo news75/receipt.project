@@ -27,7 +27,8 @@ public class Receipt {
         for (Order order : orders) {
             BigDecimal taxedPrice = order.getTaxedPrice();
             String description = order.getDescription();
-            header = String.format("\n1 %s: %s", description, taxedPrice);
+            int quantity = order.getQuantity();
+            header = String.format("\n%d %s: %s", quantity, description, taxedPrice);
         }
 
         return String.format("%s\nSales Taxes: %s\nTotal: %s",header, tax, total);
