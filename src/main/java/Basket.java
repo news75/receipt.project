@@ -8,6 +8,7 @@ import java.util.List;
 public class Basket {
 
     private List<String> goods = new ArrayList<String>();
+    private List<Order> orders = new ArrayList<Order>();
 
     public void add(String goodDescription) {
         goods.add(goodDescription);
