@@ -7,22 +7,23 @@ import static org.junit.Assert.*;
  * Created by giuseppe on 26/09/2016.
  */
 public class AcceptanceTest {
-    private Basket atBasket;
+    private Basket basket;
+    private Receipt receipt;
+
 
     @Before
     public void setUp(){
-        atBasket = new Basket();
+        basket = new Basket();
+        receipt = new Receipt();
     }
 
     @Test
     public void testDiAccettazioneInput1(){
-        atBasket.add(Order.createFromGoodDescription("1 book at 12.49"));
-        atBasket.add(Order.createFromGoodDescription("1 music CD at 14.99"));
-        atBasket.add(Order.createFromGoodDescription("1 chocolate bar at 0.85"));
+        basket.add(Order.createFromGoodDescription("1 book at 12.49"));
+        basket.add(Order.createFromGoodDescription("1 music CD at 14.99"));
+        basket.add(Order.createFromGoodDescription("1 chocolate bar at 0.85"));
 
-        Receipt receipt = new Receipt();
-
-        atBasket.printReceipt(receipt);
+        basket.printReceipt(receipt);
 
         assertEquals("\n" +
                 "1 book: 12.49\n" +
@@ -34,12 +35,10 @@ public class AcceptanceTest {
 
     @Test
     public void testDiAccettazioneInput2(){
-        atBasket.add(Order.createFromGoodDescription("1 imported box of chocolates at 10.00"));
-        atBasket.add(Order.createFromGoodDescription("1 imported bottle of perfume at 47.50"));
+        basket.add(Order.createFromGoodDescription("1 imported box of chocolates at 10.00"));
+        basket.add(Order.createFromGoodDescription("1 imported bottle of perfume at 47.50"));
 
-        Receipt receipt = new Receipt();
-
-        atBasket.printReceipt(receipt);
+        basket.printReceipt(receipt);
 
         assertEquals("\n" +
                 "1 imported box of chocolates: 10.50\n" +
@@ -50,14 +49,12 @@ public class AcceptanceTest {
 
     @Test
     public void testDiAccettazioneInput3(){
-        atBasket.add(Order.createFromGoodDescription("1 imported bottle of perfume at 27.99"));
-        atBasket.add(Order.createFromGoodDescription("1 bottle of perfume at 18.99"));
-        atBasket.add(Order.createFromGoodDescription("1 packet of headache pills at 9.75"));
-        atBasket.add(Order.createFromGoodDescription("1 box of imported chocolates at 11.25"));
-
-        Receipt receipt = new Receipt();
-
-        atBasket.printReceipt(receipt);
+        basket.add(Order.createFromGoodDescription("1 imported bottle of perfume at 27.99"));
+        basket.add(Order.createFromGoodDescription("1 bottle of perfume at 18.99"));
+        basket.add(Order.createFromGoodDescription("1 packet of headache pills at 9.75"));
+        basket.add(Order.createFromGoodDescription("1 box of imported chocolates at 11.25"));
+        
+        basket.printReceipt(receipt);
 
         assertEquals("\n" +
                 "1 imported bottle of perfume: 32.19\n" +
