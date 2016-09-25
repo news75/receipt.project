@@ -17,5 +17,6 @@ public class BasketTest {
         basket.add("1 chocolate bar at 0.85");
 
         assertEquals(new BigDecimal("1.50"), basket.salesTaxes());
+        assertEquals(new BigDecimal("29.83"), basket.total());
     }
 }
