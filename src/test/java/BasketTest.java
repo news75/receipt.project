@@ -35,6 +35,6 @@ public class BasketTest {
 
         assertEquals(new BigDecimal("30.00"), receipt.settedTotal);
         assertEquals(new BigDecimal("3.00"), receipt.settedSalesTaxes);
-
+        assertTrue(receipt.settedOrders);
     }
 }

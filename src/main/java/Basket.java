@@ -35,5 +35,6 @@ public class Basket {
     public void printReceipt(Receipt receipt) {
         receipt.setTotal(total());
         receipt.setTax(salesTaxes());
+        receipt.setOrders(orders);
     }
 }

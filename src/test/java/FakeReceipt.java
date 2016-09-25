@@ -1,4 +1,5 @@
 import java.math.BigDecimal;
+import java.util.List;
 
 /**
  * Created by giuseppe on 25/09/2016.
@@ -6,6 +7,7 @@ import java.math.BigDecimal;
 public class FakeReceipt extends Receipt {
     public BigDecimal settedTotal;
     public BigDecimal settedSalesTaxes;
+    public boolean settedOrders;
 
     @Override
     public void setTotal(BigDecimal total) {
@@ -15,5 +17,10 @@ public class FakeReceipt extends Receipt {
     @Override
     public void setTax(BigDecimal tax) {
         settedSalesTaxes = tax;
+    }
+
+    @Override
+    public void setOrders(List<Order> orders) {
+        settedOrders = true;
     }
 }
