@@ -31,18 +31,6 @@ public class TaxTest {
     }
 
     @Test
-    public void testFoodIsTaxFreeGood(){
-
-        assertEquals(new BigDecimal("0.00"), tax.getTaxPercentage("tax free goods is food, for instance"));
-    }
-
-    @Test
-    public void testMedicalIsTaxFreeGood(){
-
-        assertEquals(new BigDecimal("0.00"), tax.getTaxPercentage("tax free goods is medical, for instance"));
-    }
-
-    @Test
     public void testTaxForImportedGenericGoods(){
 
         assertEquals(new BigDecimal("0.15"), tax.getTaxPercentage("tax for imported goods"));
