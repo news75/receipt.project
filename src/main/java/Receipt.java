@@ -1,14 +1,15 @@
 import java.math.BigDecimal;
+import java.util.List;
 
 /**
  * Created by giuseppe on 25/09/2016.
  */
 public class Receipt {
-    private Order[] orders;
+    private List<Order> orders;
     private BigDecimal tax;
     private BigDecimal total;
 
-    public void setOrders(Order[] orders) {
+    public void setOrders(List<Order> orders) {
         this.orders = orders;
     }
 

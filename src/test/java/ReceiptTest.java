@@ -1,6 +1,8 @@
 import org.junit.Test;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -11,7 +13,7 @@ public class ReceiptTest {
 
     @Test
     public void testEmptyReceipt(){
-        Order[] orders = new Order[] {};
+        List<Order> orders = new ArrayList<Order>();
         Receipt receipt = new Receipt();
 
         receipt.setOrders(orders);
