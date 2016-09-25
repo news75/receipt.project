@@ -27,6 +27,14 @@ public class Basket {
     }
 
     public BigDecimal total() {
-        return new BigDecimal("29.83");
+        BigDecimal taxedPrice = new BigDecimal("0.00");
+        for (String good : goods) {
+            ItemDetails itemDetails = new ItemDetails();
+            itemDetails.parse(good);
+            Calculator calculator = new Calculator(itemDetails, new Tax());
+            taxedPrice = taxedPrice.add(calculator.getTaxedPrice());
+        }
+
+        return taxedPrice;
     }
 }
