@@ -11,6 +11,8 @@ public class BasketTest {
 
     @Test
     public void testBasket(){
+        Order order = new FakeOrder(null,null).initWithPriceAndTax("10.00","1.00");
+
         Basket basket = new Basket();
 
         basket.add(Order.createFromGoodDescription("1 book at 12.49"));
