@@ -34,10 +34,7 @@ public class Basket {
 
     public BigDecimal total() {
         BigDecimal taxedPrice = new BigDecimal("0.00");
-        for (String good : goods) {
-            ItemDetails itemDetails = new ItemDetails();
-            itemDetails.parse(good);
-            Order order = new Order(itemDetails, new Tax());
+        for (Order order : orders) {
             taxedPrice = taxedPrice.add(order.getTaxedPrice());
         }
 
