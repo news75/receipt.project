@@ -34,5 +34,7 @@ public class BasketTest {
         basket.printReceipt(receipt);
 
         assertEquals(new BigDecimal("30.00"), receipt.settedTotal);
+        assertEquals(new BigDecimal("3.00"), receipt.settedSalesTaxes);
+
     }
 }
