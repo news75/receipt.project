@@ -27,7 +27,7 @@ public class Receipt {
         if (orders.size() > 0) {
             Order order = orders.get(0);
             BigDecimal taxedPrice = order.getTaxedPrice();
-            return String.format("1 book: %s\nSales Taxes: %s\nTotal: %s", taxedPrice, tax, total);
+            header = String.format("1 book: %s", taxedPrice);
         }
 
         return String.format("%s\nSales Taxes: %s\nTotal: %s",header, tax, total);
