@@ -18,7 +18,7 @@ public class TaxTest {
     }
 
     @Test
-    public void testTaxFreeGoods(){
+    public void testTaxFreeGoodsList(){
         String[] expectedTaxFreeGoods = new String[] {"book","food","medical"};
 
         assertArrayEquals(expectedTaxFreeGoods, tax.taxFreeGoods);
