@@ -9,12 +9,6 @@ public class Order {
     private ItemDetails item;
     private Tax tax;
 
-    public static Order createFromGoodDescription(String goodDescription) {
-        ItemDetails itemDetails = new ItemDetails();
-        itemDetails.parse(goodDescription);
-        return new Order(itemDetails, new Tax());
-    }
-
     public Order(ItemDetails item, Tax tax) {
         this.item = item;
         this.tax = tax;
