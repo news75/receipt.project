@@ -24,8 +24,8 @@ public class Receipt {
     public String deliver() {
 
         if (orders.size() > 0)
-            return "1 book: 10.00\\nSales Taxes: 1.00\\nTotal: 10.00";
+            return "1 book: 10.00\nSales Taxes: 1.00\nTotal: 10.00";
 
-        return String.format("\\nSales Taxes: %s\\nTotal: %s", tax, total);
+        return String.format("\nSales Taxes: %s\nTotal: %s", tax, total);
     }
 }

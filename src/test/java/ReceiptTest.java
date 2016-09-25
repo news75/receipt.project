@@ -22,7 +22,7 @@ public class ReceiptTest {
 
         String deliver = receipt.deliver();
 
-        assertEquals("\\nSales Taxes: 0.00\\nTotal: 0.00",deliver);
+        assertEquals("\nSales Taxes: 0.00\nTotal: 0.00",deliver);
     }
 
     @Test
@@ -37,6 +37,6 @@ public class ReceiptTest {
 
         String deliver = receipt.deliver();
 
-        assertEquals("1 book: 10.00\\nSales Taxes: 1.00\\nTotal: 10.00",deliver);
+        assertEquals("1 book: 10.00\nSales Taxes: 1.00\nTotal: 10.00",deliver);
     }
 }
