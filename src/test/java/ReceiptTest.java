@@ -35,6 +35,7 @@ public class ReceiptTest {
     public void testReceipt(){
         ItemDetails itemDetails = new FakeItemDetails().initWithDescriptionAndQuantity("book", 1);
         orders.add(new FakeOrder(itemDetails,null).initWithTaxedPriceAndTax("10.00","1.00"));
+        orders.add(new FakeOrder(itemDetails,null).initWithTaxedPriceAndTax("10.00","1.00"));
 
         receipt.setOrders(orders);
         receipt.setTax(new BigDecimal("1.00"));
@@ -42,6 +43,6 @@ public class ReceiptTest {
 
         String deliver = receipt.deliver();
 
-        assertEquals("\n1 book: 10.00\nSales Taxes: 1.00\nTotal: 10.00",deliver);
+        assertEquals("\n1 book: 10.00\n1 book: 10.00\nSales Taxes: 1.00\nTotal: 10.00",deliver);
     }
 }
