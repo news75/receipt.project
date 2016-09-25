@@ -41,4 +41,25 @@ public class AcceptanceTest {
                 "Sales Taxes: 7.65\n" +
                 "Total: 65.15", receipt.deliver());
     }
+
+    @Test
+    public void testDiAccettazioneInput3(){
+        Basket atBasket = new Basket();
+        atBasket.add(Order.createFromGoodDescription("1 imported bottle of perfume at 27.99"));
+        atBasket.add(Order.createFromGoodDescription("1 bottle of perfume at 18.99"));
+        atBasket.add(Order.createFromGoodDescription("1 packet of headache pills at 9.75"));
+        atBasket.add(Order.createFromGoodDescription("1 box of imported chocolates at 11.25"));
+
+        Receipt receipt = new Receipt();
+
+        atBasket.printReceipt(receipt);
+
+        assertEquals("\n" +
+                "1 imported bottle of perfume: 32.19\n" +
+                "1 bottle of perfume: 20.89\n" +
+                "1 packet of headache pills: 9.75\n" +
+                "1 box of imported chocolates: 11.85\n" +
+                "Sales Taxes: 6.70\n" +
+                "Total: 74.68", receipt.deliver());
+    }
 }
