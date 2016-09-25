@@ -9,6 +9,12 @@ public class Order {
     private ItemDetails item;
     private Tax tax;
 
+    public static Order createFromGoodDescription(String goodDescription) {
+        ItemDetails itemDetails = new ItemDetails();
+        itemDetails.parse(goodDescription);
+        return new Order(itemDetails, new Tax());
+    }
+
     public Order(ItemDetails item, Tax tax) {
         this.item = item;
         this.tax = tax;
@@ -17,12 +23,6 @@ public class Order {
     public static BigDecimal roundingRules(BigDecimal value) {
 
         return value.divide(new BigDecimal("0.05")).setScale(0, RoundingMode.UP).multiply(new BigDecimal("0.05")).setScale(2);
-    }
-
-    public static Order createFromGoodDescription(String goodDescription) {
-        ItemDetails itemDetails = new ItemDetails();
-        itemDetails.parse(goodDescription);
-        return new Order(itemDetails, new Tax());
     }
 
     public BigDecimal getTaxAmmount() {
