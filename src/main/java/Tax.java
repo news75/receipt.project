@@ -15,10 +15,14 @@ public class Tax {
         BigDecimal percentage = new BigDecimal("0.00");
         if (!isTaxFree(goodDescription))
             percentage = percentage.add(new BigDecimal("0.10"));
-        if (goodDescription.contains("imported"))
+        if (isImported(goodDescription))
             percentage = percentage.add(new BigDecimal("0.05"));
 
         return percentage;
+    }
+
+    private boolean isImported(String goodDescription) {
+        return goodDescription.contains("imported");
     }
 
     private boolean isTaxFree(String goodDescription) {
