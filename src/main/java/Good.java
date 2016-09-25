@@ -6,7 +6,7 @@ import java.math.RoundingMode;
  */
 public class Good {
 
-    public Good(String goodDescription, ItemDetails itemDetails, Tax tax) {
+    public Good() {
 
     }
 
