@@ -8,9 +8,9 @@ import static org.junit.Assert.*;
 /**
  * Created by giuseppe on 24/09/2016.
  */
-public class CalculatorTest {
+public class OrderTest {
 
-    private Calculator calculator;
+    private Order order;
     private FakeItemDetails itemDetails;
     private FakeTax tax;
 
@@ -19,15 +19,15 @@ public class CalculatorTest {
         itemDetails = new FakeItemDetails();
         tax = new FakeTax();
 
-        calculator = new Calculator(itemDetails, tax);
+        order = new Order(itemDetails, tax);
     }
 
     @Test
     public void testRoundingRules(){
 
-        assertEquals(new BigDecimal("1.00"), Calculator.roundingRules(new BigDecimal("1.00")));
-        assertEquals(new BigDecimal("1.05"), Calculator.roundingRules(new BigDecimal("1.01")));
-        assertEquals(new BigDecimal("1.10"), Calculator.roundingRules(new BigDecimal("1.06")));
+        assertEquals(new BigDecimal("1.00"), Order.roundingRules(new BigDecimal("1.00")));
+        assertEquals(new BigDecimal("1.05"), Order.roundingRules(new BigDecimal("1.01")));
+        assertEquals(new BigDecimal("1.10"), Order.roundingRules(new BigDecimal("1.06")));
     }
 
     @Test
@@ -35,7 +35,7 @@ public class CalculatorTest {
         itemDetails.initWithDescription("passed good");
         tax.initWithTaxPercentage(new BigDecimal("0.00"));
 
-        calculator.getTaxAmmount();
+        order.getTaxAmmount();
 
         assertEquals("passed good", tax.goodDescription);
     }
@@ -46,8 +46,8 @@ public class CalculatorTest {
         itemDetails.initWithPrice(new BigDecimal("10.00"));
         tax.initWithTaxPercentage(new BigDecimal("0.05"));
 
-        assertEquals(new BigDecimal("0.50"), calculator.getTaxAmmount());
-        assertEquals(new BigDecimal("10.50"), calculator.getTaxedPrice());
+        assertEquals(new BigDecimal("0.50"), order.getTaxAmmount());
+        assertEquals(new BigDecimal("10.50"), order.getTaxedPrice());
     }
 
 }

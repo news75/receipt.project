@@ -19,8 +19,8 @@ public class Basket {
         for (String good : goods) {
             ItemDetails itemDetails = new ItemDetails();
             itemDetails.parse(good);
-            Calculator calculator = new Calculator(itemDetails, new Tax());
-            salesTaxes = salesTaxes.add(calculator.getTaxAmmount());
+            Order order = new Order(itemDetails, new Tax());
+            salesTaxes = salesTaxes.add(order.getTaxAmmount());
         }
 
         return salesTaxes;
@@ -31,8 +31,8 @@ public class Basket {
         for (String good : goods) {
             ItemDetails itemDetails = new ItemDetails();
             itemDetails.parse(good);
-            Calculator calculator = new Calculator(itemDetails, new Tax());
-            taxedPrice = taxedPrice.add(calculator.getTaxedPrice());
+            Order order = new Order(itemDetails, new Tax());
+            taxedPrice = taxedPrice.add(order.getTaxedPrice());
         }
 
         return taxedPrice;

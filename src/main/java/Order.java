@@ -4,12 +4,12 @@ import java.math.RoundingMode;
 /**
  * Created by giuseppe on 24/09/2016.
  */
-public class Calculator {
+public class Order {
 
     private ItemDetails item;
     private Tax tax;
 
-    public Calculator(ItemDetails item, Tax tax) {
+    public Order(ItemDetails item, Tax tax) {
         this.item = item;
         this.tax = tax;
     }
