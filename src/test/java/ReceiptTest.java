@@ -24,4 +24,19 @@ public class ReceiptTest {
 
         assertEquals("\\nSales Taxes: 0.00\\nTotal: 0.00",deliver);
     }
+
+    @Test
+    public void testReceipt(){
+        List<Order> orders = new ArrayList<Order>();
+        orders.add(new FakeOrder(null,null).initWithTaxedPriceAndTax("10.00","1.00"));
+        Receipt receipt = new Receipt();
+
+        receipt.setOrders(orders);
+        receipt.setTax(new BigDecimal("1.00"));
+        receipt.setTotal(new BigDecimal("10.00"));
+
+        String deliver = receipt.deliver();
+
+        assertEquals("1 book: 10.00\\nSales Taxes: 1.00\\nTotal: 10.00",deliver);
+    }
 }
