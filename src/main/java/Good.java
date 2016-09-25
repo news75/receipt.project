@@ -10,8 +10,4 @@ public class Good {
 
     }
 
-    public static BigDecimal roundingRules(BigDecimal value) {
-
-        return value.divide(new BigDecimal("0.05")).setScale(0, RoundingMode.UP).multiply(new BigDecimal("0.05")).setScale(2);
-    }
 }
