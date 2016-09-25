@@ -11,12 +11,12 @@ import static org.junit.Assert.*;
 public class CalculatorTest {
 
     private Calculator calculator;
-    private ItemDetailsFake itemDetails;
+    private FakeItemDetails itemDetails;
     private TaxFake tax;
 
     @Before
     public void setUp(){
-        itemDetails = new ItemDetailsFake();
+        itemDetails = new FakeItemDetails();
         tax = new TaxFake();
 
         calculator = new Calculator(itemDetails, tax);

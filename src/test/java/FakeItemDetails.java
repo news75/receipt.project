@@ -3,7 +3,7 @@ import java.math.BigDecimal;
 /**
  * Created by giuseppe on 24/09/2016.
  */
-class ItemDetailsFake extends ItemDetails {
+class FakeItemDetails extends ItemDetails {
     private String description;
     private BigDecimal price;
 
