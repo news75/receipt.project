@@ -33,4 +33,8 @@ public class Order {
     public String getDescription() {
         return item.description();
     }
+
+    public int getQuantity() {
+        return item.quantity();
+    }
 }

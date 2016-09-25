@@ -59,4 +59,12 @@ public class OrderTest {
         assertEquals("description from itemDetails", description);
     }
 
+    @Test
+    public void testGetQuantity(){
+        itemDetails.initWithQuantity(1);
+
+        int quantity = order.getQuantity();
+
+        assertEquals(1, quantity);
+    }
 }
