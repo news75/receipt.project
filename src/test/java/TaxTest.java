@@ -18,6 +18,13 @@ public class TaxTest {
     }
 
     @Test
+    public void testTaxFreeGoods(){
+        String[] expectedTaxFreeGoods = new String[] {"book","food","medical"};
+
+        assertArrayEquals(expectedTaxFreeGoods, tax.taxFreeGoods);
+    }
+
+    @Test
     public void testBooksAreTaxFreeGoods(){
 
         assertEquals(new BigDecimal("0.00"), tax.getTaxPercentage("tax free goods are books, for instance"));
