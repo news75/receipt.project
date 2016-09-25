@@ -1,14 +1,28 @@
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by giuseppe on 25/09/2016.
  */
 public class Basket {
-    public void add(String goodDescription) {
 
+    private List<String> goods = new ArrayList<String>();
+
+    public void add(String goodDescription) {
+        goods.add(goodDescription);
     }
 
     public BigDecimal salesTaxes() {
-        return new BigDecimal("1.50");
+
+        BigDecimal salesTaxes = new BigDecimal("0.00");
+        for (String good : goods) {
+            ItemDetails itemDetails = new ItemDetails();
+            itemDetails.parse(good);
+            Calculator calculator = new Calculator(itemDetails, new Tax());
+            salesTaxes = salesTaxes.add(calculator.getTaxAmmount());
+        }
+
+        return salesTaxes;
     }
 }
