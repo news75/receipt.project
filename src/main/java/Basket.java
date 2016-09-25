@@ -16,7 +16,7 @@ public class Basket {
         add(order);
     }
 
-    private void add(Order order){
+    public void add(Order order){
         orders.add(order);
     }
 
