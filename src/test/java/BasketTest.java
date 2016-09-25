@@ -11,7 +11,7 @@ public class BasketTest {
 
     @Test
     public void testBasket(){
-        Order order = new FakeOrder(null,null).initWithPriceAndTax("10.00","1.00");
+        Order order = new FakeOrder(null,null).initWithTaxedPriceAndTax("10.00","1.00");
 
         Basket basket = new Basket();
 

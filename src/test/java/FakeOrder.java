@@ -11,8 +11,8 @@ public class FakeOrder extends Order {
         super(item, tax);
     }
 
-    public Order initWithPriceAndTax(String price, String taxAmmount) {
-        this.price = price;
+    public Order initWithTaxedPriceAndTax(String taxedPrice, String taxAmmount) {
+        this.price = taxedPrice;
         this.taxAmmount = taxAmmount;
         return this;
     }
