@@ -10,10 +10,11 @@ import static org.junit.Assert.*;
  * Created by giuseppe on 25/09/2016.
  */
 public class ReceiptTest {
+    private List<Order> orders;
 
     @Test
     public void testEmptyReceipt(){
-        List<Order> orders = new ArrayList<Order>();
+        orders = new ArrayList<Order>();
         Receipt receipt = new Receipt();
 
         receipt.setOrders(orders);
@@ -27,7 +28,7 @@ public class ReceiptTest {
 
     @Test
     public void testReceipt(){
-        List<Order> orders = new ArrayList<Order>();
+        orders = new ArrayList<Order>();
         ItemDetails itemDetails = new FakeItemDetails().initWithDescription("book");
         orders.add(new FakeOrder(itemDetails,null).initWithTaxedPriceAndTax("10.00","1.00"));
         Receipt receipt = new Receipt();
