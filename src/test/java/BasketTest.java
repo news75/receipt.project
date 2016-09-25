@@ -13,13 +13,26 @@ public class BasketTest {
     public void testBasket(){
         Order order1 = new FakeOrder(null,null).initWithTaxedPriceAndTax("10.00","1.00");
         Order order2 = new FakeOrder(null,null).initWithTaxedPriceAndTax("20.00","2.00");
-
         Basket basket = new Basket();
-
         basket.add(order1);
         basket.add(order2);
 
         assertEquals(new BigDecimal("3.00"), basket.salesTaxes());
         assertEquals(new BigDecimal("30.00"), basket.total());
+    }
+
+    @Test
+    public void TestBasketPrintReceipt(){
+        Order order1 = new FakeOrder(null,null).initWithTaxedPriceAndTax("10.00","1.00");
+        Order order2 = new FakeOrder(null,null).initWithTaxedPriceAndTax("20.00","2.00");
+        Basket basket = new Basket();
+        basket.add(order1);
+        basket.add(order2);
+
+        FakeReceipt receipt = new FakeReceipt();
+
+        basket.printReceipt(receipt);
+
+        assertEquals(new BigDecimal("30.00"), receipt.settedTotal);
     }
 }

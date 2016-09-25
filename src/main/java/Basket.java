@@ -31,4 +31,8 @@ public class Basket {
 
         return taxedPrice;
     }
+
+    public void printReceipt(Receipt receipt) {
+        receipt.setTotal(total());
+    }
 }
