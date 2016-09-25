@@ -1,3 +1,4 @@
+import org.junit.Before;
 import org.junit.Test;
 
 import java.math.BigDecimal;
@@ -9,28 +10,44 @@ import static org.junit.Assert.*;
  */
 public class CalculatorTest {
 
+    private Calculator calculator;
+    private ItemDetailsFake itemDetails;
+    private TaxFake tax;
+
+    @Before
+    public void setUp(){
+        itemDetails = new ItemDetailsFake();
+        tax = new TaxFake();
+
+        calculator = new Calculator(itemDetails, tax);
+    }
+
     @Test
     public void testRoundingRules(){
 
         assertEquals(new BigDecimal("1.00"), Good.roundingRules(new BigDecimal("1.00")));
         assertEquals(new BigDecimal("1.05"), Good.roundingRules(new BigDecimal("1.01")));
         assertEquals(new BigDecimal("1.10"), Good.roundingRules(new BigDecimal("1.06")));
+    }
 
+    @Test
+    public void testTaxKnowTheGood(){
+        itemDetails.initWithDescription("passed good");
+        tax.initWithTaxPercentage(new BigDecimal("0.00"));
+
+        calculator.getTaxAmmount();
+
+        assertEquals("passed good", tax.goodDescription);
     }
 
     @Test
     public void testGivenAItemGetPriceAndTaxAmmount(){
-        ItemDetails item = new ItemDetails();
-        item.parse("1 book at 12.49");
-        Tax tax = new Tax();
 
-        Calculator calculator = new Calculator();
+        itemDetails.initWithPrice(new BigDecimal("10.00"));
+        tax.initWithTaxPercentage(new BigDecimal("0.05"));
 
-        BigDecimal taxAmmount = calculator.getTaxAmmount(item, tax);
-
-        assertEquals(new BigDecimal("0.00"), taxAmmount);
+        assertEquals(new BigDecimal("0.50"), calculator.getTaxAmmount());
+        assertEquals(new BigDecimal("10.50"), calculator.getTaxedPrice());
     }
-
-
 
 }

@@ -5,11 +5,22 @@ import java.math.BigDecimal;
  */
 public class Calculator {
 
-    public BigDecimal getTaxAmmount(ItemDetails itemDetails, Tax tax) {
-        BigDecimal price = itemDetails.price();
-        BigDecimal taxpercentage = tax.getTaxPercentage(itemDetails.description());
+    private ItemDetails item;
+    private Tax tax;
+
+    public Calculator(ItemDetails item, Tax tax) {
+        this.item = item;
+        this.tax = tax;
+    }
+
+    public BigDecimal getTaxAmmount() {
+        BigDecimal price = item.price();
+        BigDecimal taxpercentage = tax.getTaxPercentage(this.item.description());
 
         return Good.roundingRules(price.multiply(taxpercentage));
     }
 
+    public BigDecimal getTaxedPrice() {
+        return item.price().add(getTaxAmmount());
+    }
 }
