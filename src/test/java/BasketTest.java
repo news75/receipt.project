@@ -13,9 +13,9 @@ public class BasketTest {
     public void testBasket(){
         Basket basket = new Basket();
 
-        basket.add(Order.createOrder("1 book at 12.49"));
-        basket.add(Order.createOrder("1 music CD at 14.99"));
-        basket.add(Order.createOrder("1 chocolate bar at 0.85"));
+        basket.add(Order.createFromGoodDescription("1 book at 12.49"));
+        basket.add(Order.createFromGoodDescription("1 music CD at 14.99"));
+        basket.add(Order.createFromGoodDescription("1 chocolate bar at 0.85"));
 
         assertEquals(new BigDecimal("1.50"), basket.salesTaxes());
         assertEquals(new BigDecimal("29.83"), basket.total());
