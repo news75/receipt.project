@@ -38,6 +38,6 @@ public class ReceiptTest {
 
         String deliver = receipt.deliver();
 
-        assertEquals("1 book: 10.00\nSales Taxes: 1.00\nTotal: 10.00",deliver);
+        assertEquals("\n1 book: 10.00\nSales Taxes: 1.00\nTotal: 10.00",deliver);
     }
 }
