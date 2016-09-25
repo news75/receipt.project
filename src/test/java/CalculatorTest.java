@@ -12,12 +12,12 @@ public class CalculatorTest {
 
     private Calculator calculator;
     private FakeItemDetails itemDetails;
-    private TaxFake tax;
+    private FakeTax tax;
 
     @Before
     public void setUp(){
         itemDetails = new FakeItemDetails();
-        tax = new TaxFake();
+        tax = new FakeTax();
 
         calculator = new Calculator(itemDetails, tax);
     }

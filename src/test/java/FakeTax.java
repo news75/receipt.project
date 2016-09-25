@@ -3,7 +3,7 @@ import java.math.BigDecimal;
 /**
  * Created by giuseppe on 24/09/2016.
  */
-class TaxFake extends Tax {
+class FakeTax extends Tax {
 
     private BigDecimal taxValue;
     public String goodDescription;
@@ -14,7 +14,7 @@ class TaxFake extends Tax {
         return taxValue;
     }
 
-    public TaxFake initWithTaxPercentage(BigDecimal bigDecimal) {
+    public FakeTax initWithTaxPercentage(BigDecimal bigDecimal) {
         this.taxValue = bigDecimal;
         return this;
     }
