@@ -12,6 +12,10 @@ public class Basket {
 
     public void add(String goodDescription) {
         goods.add(goodDescription);
+        ItemDetails itemDetails = new ItemDetails();
+        itemDetails.parse(goodDescription);
+        Order order = new Order(itemDetails, new Tax());
+        add(order);
     }
 
     private void add(Order order){
@@ -19,13 +23,6 @@ public class Basket {
     }
 
     public BigDecimal salesTaxes() {
-
-        for (String good : goods) {
-            ItemDetails itemDetails = new ItemDetails();
-            itemDetails.parse(good);
-            Order order = new Order(itemDetails, new Tax());
-            add(order);
-        }
 
         BigDecimal salesTaxes = new BigDecimal("0.00");
         for (Order order : orders) {
