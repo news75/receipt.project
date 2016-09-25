@@ -1,3 +1,5 @@
+import java.math.BigDecimal;
+
 /**
  * Created by giuseppe on 25/09/2016.
  */
@@ -14,4 +16,15 @@ public class FakeOrder extends Order {
         this.taxAmmount = taxAmmount;
         return this;
     }
+
+    @Override
+    public BigDecimal getTaxAmmount() {
+        return new BigDecimal(taxAmmount);
+    }
+
+    @Override
+    public BigDecimal getTaxedPrice() {
+        return new BigDecimal(price);
+    }
+
 }
