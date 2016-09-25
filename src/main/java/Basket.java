@@ -14,20 +14,24 @@ public class Basket {
         goods.add(goodDescription);
     }
 
+    private void add(Order order){
+        orders.add(order);
+    }
+
     public BigDecimal salesTaxes() {
 
         for (String good : goods) {
             ItemDetails itemDetails = new ItemDetails();
             itemDetails.parse(good);
             Order order = new Order(itemDetails, new Tax());
-            orders.add(order);
+            add(order);
         }
 
         BigDecimal salesTaxes = new BigDecimal("0.00");
         for (Order order : orders) {
             salesTaxes = salesTaxes.add(order.getTaxAmmount());
         }
-        
+
         return salesTaxes;
     }
 
