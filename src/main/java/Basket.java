@@ -16,14 +16,18 @@ public class Basket {
 
     public BigDecimal salesTaxes() {
 
-        BigDecimal salesTaxes = new BigDecimal("0.00");
         for (String good : goods) {
             ItemDetails itemDetails = new ItemDetails();
             itemDetails.parse(good);
             Order order = new Order(itemDetails, new Tax());
-            salesTaxes = salesTaxes.add(order.getTaxAmmount());
+            orders.add(order);
         }
 
+        BigDecimal salesTaxes = new BigDecimal("0.00");
+        for (Order order : orders) {
+            salesTaxes = salesTaxes.add(order.getTaxAmmount());
+        }
+        
         return salesTaxes;
     }
 
