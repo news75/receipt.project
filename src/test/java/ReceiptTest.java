@@ -1,3 +1,4 @@
+import org.junit.Before;
 import org.junit.Test;
 
 import java.math.BigDecimal;
@@ -12,9 +13,13 @@ import static org.junit.Assert.*;
 public class ReceiptTest {
     private List<Order> orders;
 
+    @Before
+    public void setUp(){
+        orders = new ArrayList<Order>();
+    }
+
     @Test
     public void testEmptyReceipt(){
-        orders = new ArrayList<Order>();
         Receipt receipt = new Receipt();
 
         receipt.setOrders(orders);
@@ -28,7 +33,6 @@ public class ReceiptTest {
 
     @Test
     public void testReceipt(){
-        orders = new ArrayList<Order>();
         ItemDetails itemDetails = new FakeItemDetails().initWithDescription("book");
         orders.add(new FakeOrder(itemDetails,null).initWithTaxedPriceAndTax("10.00","1.00"));
         Receipt receipt = new Receipt();
